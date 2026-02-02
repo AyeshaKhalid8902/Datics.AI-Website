@@ -113,9 +113,13 @@
       </p>
 
       <div class="cta-box">
-        <p>Ready to take the first step?</p>
-        <a href="#" class="btn" style="width: 40%;margin-left:160px ;">SHARE YOUR IDEA WITH US</a>
-      </div>
+       <!-- <p>Ready to take the first step?</p>
+        <a href="#" class="btn" style="width: 40%;margin-left:160px ;">SHARE YOUR IDEA WITH US</a>-->
+      
+      <button class="btn" style="width:40%; margin-left:160px;">
+  SHARE YOUR IDEA WITH US
+</button>
+</div>
     </div>
 
   </div>
@@ -172,9 +176,13 @@
           <textarea placeholder="Please give as much information as you can think of"></textarea>
         </div>
 
-        <div class="form-btn">
+        <!--<div class="form-btn">
           <button type="submit" >LET US HELP</button>
-        </div>
+        </div>-->
+        <div class="form-btn">
+  <button type="button" onclick="alert('Thank you! We will help you soon.')">LET US HELP</button>
+</div>
+
       </form>
 
     </div>
@@ -185,10 +193,31 @@
     <h2>Subscribe For Newsletter</h2><br>
     <p>The Datics Connection Your connection to the latest technology news</p><br>
 
-    <div class="newsletter-box">
+    <!--<div class="newsletter-box">
       <input type="email" placeholder="Email">
       <button>SEND</button>
-    </div>
+    </div>-->
+    <div class="newsletter-box">
+  <input type="email" placeholder="Email" id="emailInput">
+  <button id="sendBtn">SEND</button>
+</div>
+
+<script>
+  // Button select karna
+  const button = document.getElementById("sendBtn");
+
+  // Click event lagana
+  button.addEventListener("click", function() {
+    const email = document.getElementById("emailInput").value;
+    
+    if(email) {
+      alert("Thank you! Your email has been submitted: " + email);
+    } else {
+      alert("Please enter your email first!");
+    }
+  });
+</script>
+
   </section>
   <!-- <section class="footer-image">
     <img src="footer-img.webp" alt="footer-img">
@@ -319,7 +348,16 @@
     <img src="image.png" alt="logo" >
     <p style="font-size: 0.9em;">© 2025 All Right Reserved.</p>
   </div>
+<script>
+  // Button select karna
+  const getInTouchBtn = document.querySelector(".btn2");
 
+  // Click event
+  getInTouchBtn.addEventListener("click", function(event) {
+    event.preventDefault(); // Page reload ya link follow na ho
+    alert("You clicked the GET IN TOUCH button!");
+  });
+</script>
   <script src="script.js"></script>
 </body>
 </html>
